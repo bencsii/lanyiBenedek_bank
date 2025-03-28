@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bank
+namespace abstract_bank_uj
 {
 	internal sealed class Owner
 	{
