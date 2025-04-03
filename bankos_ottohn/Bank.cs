@@ -15,6 +15,21 @@ namespace bankos_ottohn
             accounts = new List<BankAccount>(accountNum);
         }
 
+        public BankAccount NewAccount(Owner owner, double creditLimit)
+        {
+            BankAccount newAccount;
+            if (creditLimit > 0)
+            {
+                newAccount = new CreditAccount(owner, creditLimit);
+            }
+            else
+            {
+                newAccount = new SavingsAccount(owner);
+            }
+            accounts.Add(newAccount);
+            return newAccount;
+        }
+
         public double TotalBalance(Owner owner)
         {
 
@@ -36,7 +51,7 @@ namespace bankos_ottohn
 
         }
 
-        public BankAccount? MaximalBalanceAccount(Owner owner)
+        public BankAccount? MaximalBalanceAccount(Owner owner) // ???
         {
             return accounts?.Where(a => a.Owner == owner).OrderByDescending(a => a.Balance).FirstOrDefault();
         }

@@ -8,7 +8,7 @@ namespace bankos_ottohn
 {
     internal abstract class BankAccount : BankingService
     {
-        private double balance;
+        double balance;
 
 
         public double Balance { get => balance; set => balance = value; }
