@@ -26,5 +26,12 @@ namespace bankos_ottohn
         }
 
         public abstract bool Withdraw(double amount);
+
+
+
+        public BankCard NewCard(int cardNumber)
+        {
+            return new BankCard(Owner, balance, cardNumber);
+        }
     }
 }
